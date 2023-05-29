@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --radial-gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+  --scissors-gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+  --paper-gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+  --rock-gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+  --lizard-gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+  --cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle at top center,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreboard {
+  display: flex;
+  border: 2px solid var(--header-outline);
+  width: 45%;
+  justify-content: space-between;
+  padding: 0.7rem;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.title img {
+  width: 130px;
+}
+
+.score {
+  background-color: #fff;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.score p {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--score-text);
+  text-transform: uppercase;
+}
+
+.score h1 {
+  font-size: 2.3rem;
+  color: var(--dark-text);
+}
+
+/* STEP 1 */
+.game {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+  gap: 40px;
+  justify-content: center;
+  position: relative;
+  background-image: url("images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 160px;
+}
+
+.circle {
+  cursor: pointer;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 13px;
+  display: flex;
+  height: 7rem;
+  justify-content: center;
+  width: 7rem;
+  transition: all 0.25s;
+}
+
+.circle:hover {
+  transform: translate3d(0px, -8px, 0px);
+}
+
+.circle img {
+  width: 40px;
+}
+
+.paper {
+  border-color: rgb(19, 127, 236);
+}
+
+.scissors {
+  border-color: orange;
+}
+
+.rock {
+  border-color: rgb(232, 73, 104);
+}
+
+.btn-box {
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 90vw;
+  position: fixed;
+  top: 80%;
+}
+
+.rules-btn {
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.5rem 1.8rem;
+  border-radius: 5px;
+  border: 1px solid #bdb7b7;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .scoreboard {
+    width: 90%;
+    align-items: center;
+  }
+
+  .title img {
+    width: 80px;
+  }
+
+  .score {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .circle {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .circle img {
+    width: 33px;
+  }
+
+  .btn-box {
+    justify-content: center;
+    margin-top: 5rem;
+  }
+}
+/* STEP 1 */
+
+/* STEP 2 */
+.step2 {
+  margin-top: 80px;
+  display: none;
+  gap: 5rem;
+  color: #fff;
+  align-items: center;
+}
+
+.step2-first,
+.step2-second {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.result-btn {
+  width: 100%;
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 10px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  transition: all 0.25s;
+}
+
+.result-btn:hover {
+  color: red;
+  transform: translate3d(0px, -5px, 0px);
+}
+
+.step2 .circle {
+  width: 10rem;
+  height: 10rem;
+}
+
+.circle img {
+  width: 50%;
+}
+/* STEP 2 */
